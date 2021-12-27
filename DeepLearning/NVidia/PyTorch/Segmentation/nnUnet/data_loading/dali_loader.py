@@ -149,26 +149,6 @@ class TrainPipeline(GenericPipeline):
     def rotate_fn(self, img, lbl):
         return fn.rotate(images, angle=30, interp_type=types.INTERP_LINEAR, fill_value=0)
 
-    def clahe_fn(self, img):
-
-    def sharpen_fn(self, img):
-
-    def emboss_fn(self, img):
-
-    def blur_median_fn(self, img):
-
-    def blur_motion_fn(self, img):
-
-    def elastic_transform_fn(self, img):
-
-    def perspective_fn(self, img):
-
-    def copy_cell_fn(self, img):
-
-    def piecewise_affine_transform_fn(self, img):
-
-    def pincushion_distortion_fn(self, img):
-
     def define_graph(self):
         img, lbl = self.load_data()
         img, lbl = self.biased_crop_fn(img, lbl)
