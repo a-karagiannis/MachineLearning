@@ -28,13 +28,13 @@ def get_task_code(args):
 def get_config_file(args):
     if args.data != "/data":
         if args.kaggle:
-            path = os.path.join("./", args.data, "config.pkl")
+            path = "." + args.data + "/config.pkl"
         else:
             path = os.path.join(args.data, "config.pkl")
     else:
         task_code = get_task_code(args)
         if args.kaggle:
-            path = os.path.join("./", args.data, "config.pkl")
+            path = "." + args.data + "/config.pkl"
         else:
             path = os.path.join(args.data, task_code, "config.pkl")
     return pickle.load(open(path, "rb"))
