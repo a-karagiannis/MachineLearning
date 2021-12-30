@@ -166,7 +166,7 @@ class NNUnet(pl.LightningModule):
         if self.args.dim == 3:
             return self.sliding_window_inference(image)
         if self.args.data2d_dim == 2:
-            return self.model(image)
+            return self.sliding_window_inference(image)
         if self.args.exec_mode == "predict":
             return self.inference2d_test(image)
         return self.inference2d(image)
