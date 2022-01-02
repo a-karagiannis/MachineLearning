@@ -225,7 +225,7 @@ class NNUnet(pl.LightningModule):
 
         metrics = {}
         metrics.update({"Mean dice": round(torch.mean(dice).item(), 2)})
-        metrics.update({"Highest": round(torch.mean(torch.Tensor(self.best_mean_dice)).item(), 2)})
+        metrics.update({"Highest": round(torch.mean(self.best_mean_dice).item(), 2)})
         if self.n_class > 1:
             metrics.update({f"L{i+1}": round(m.item(), 2) for i, m in enumerate(dice)})
         metrics.update({"val_loss": round(loss.item(), 4)})
